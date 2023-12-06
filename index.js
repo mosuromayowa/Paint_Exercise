@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const canvas = document.getElementById('canvas');
+    const canvas = document.getElementById('main');
     const ctx = canvas.getContext('2d');
 
     let drawing = false;
@@ -7,15 +7,7 @@ document.addEventListener('DOMContentLoaded', function () {
     let brushSize = 5;
     let brushColor = '#000' ;
 
-    function startDrawing (e) {
-        drawing = true;
-        draw(e);
-    }
 
-    function stopDrawing() {
-        drawing = false;
-        ctx
-    }
 
     function draw(e) {
         if (!drawing) return;
@@ -28,7 +20,12 @@ document.addEventListener('DOMContentLoaded', function () {
         ctx.stroke();
         ctx.beginPath();
         ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+    }
 
+    function changeBrushColor(color) {
+        brushColor = color;
+        erasing = false;
+    }
         function toggleEraser() {
             erasing = !erasing;
         }
@@ -38,12 +35,13 @@ document.addEventListener('DOMContentLoaded', function () {
         }
 
         document.getElementById('brushSize').addEventListener('input', (e) => brushSize = e.target.value);
+        ['pink', 'black', 'blue', 'yellow'].forEach(colorBtn => {
+            document.getElementById(colorBtn).addEventListener('click', () => changeBrushColor(`#${colorBtn}`));
+        });
+        
+        // Commit 11: Add event listeners for eraser and clean buttons.
+        document.getElementById('eraser').addEventListener('click', toggleEraser);
+        document.getElementById('clean').addEventListener('click', cleanCanvas);
 
-    }
+    });
     
-
-
-
-
-
-}
