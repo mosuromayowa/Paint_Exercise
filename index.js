@@ -12,7 +12,11 @@ document.addEventListener('DOMContentLoaded', function () {
         draw(e);
     }
 
-    function stopDrawing
+    function stopDrawing() {
+        drawing = false;
+        ctx
+    }
+    
 
 
 
