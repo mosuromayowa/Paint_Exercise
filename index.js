@@ -9,7 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function startDrawing (e) {
         drawing = true;
+        draw(e);
     }
+
+    function stopDrawing
 
 
 
