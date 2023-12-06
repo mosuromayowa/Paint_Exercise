@@ -16,6 +16,21 @@ document.addEventListener('DOMContentLoaded', function () {
         drawing = false;
         ctx
     }
+
+    function draw(e) {
+        if (!drawing) return;
+
+        ctx.lineWidth = brushSize;
+        ctx.lineCap = 'round';
+        ctx.strokeStyle = erasing ? '#fff' : brushColor;
+
+        ctx.lineTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+        ctx.stroke();
+        ctx.beginPath();
+        ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
+
+        
+    }
     
 
 
