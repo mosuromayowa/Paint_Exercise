@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
         }
 
+        document.getElementById('brushSize').addEventListener('input', (e) => brushSize = e.target.value);
 
     }
     
