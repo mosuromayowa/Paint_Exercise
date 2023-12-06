@@ -33,6 +33,10 @@ document.addEventListener('DOMContentLoaded', function () {
             erasing = !erasing;
         }
 
+        function cleanCanvas() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+        }
+
 
     }
     
