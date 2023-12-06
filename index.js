@@ -29,7 +29,11 @@ document.addEventListener('DOMContentLoaded', function () {
         ctx.beginPath();
         ctx.moveTo(e.clientX - canvas.offsetLeft, e.clientY - canvas.offsetTop);
 
-        
+        function toggleEraser() {
+            erasing = !erasing;
+        }
+
+
     }
     
 
